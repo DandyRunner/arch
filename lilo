@@ -1149,7 +1149,7 @@ install_desktop_environment(){
       package_install "plasma kf5 sddm"
       package_install "ark dolphin dolphin-plugins kio-extras kdeconnect quota-tools gwenview kipi-plugins kate kcalc konsole spectacle okular sweeper kwalletmanager"
       is_package_installed "cups" && package_install "print-manager"
-      [[ $LOCALE != en_US ]] && package_install "kde-l10n-$LOCALE_KDE"
+      # [[ $LOCALE != en_US ]] && package_install "kde-l10n-$LOCALE_KDE"
       # config xinitrc
       config_xinitrc "startkde"
       pause_function
