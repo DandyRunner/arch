@@ -101,9 +101,10 @@ configure_mirrorlist(){
     echo " Unable to update, could not download list."
   fi
   # better repo should go first
-  # cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.tmp
-  # rankmirrors /etc/pacman.d/mirrorlist.tmp > /etc/pacman.d/mirrorlist
-  # rm /etc/pacman.d/mirrorlist.tmp
+  pacman -Sy pacman-contrib
+  cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.tmp
+  rankmirrors /etc/pacman.d/mirrorlist.tmp > /etc/pacman.d/mirrorlist
+  rm /etc/pacman.d/mirrorlist.tmp
   # allow global read access (required for non-root yaourt execution)
   chmod +r /etc/pacman.d/mirrorlist
   $EDITOR /etc/pacman.d/mirrorlist
@@ -609,7 +610,7 @@ configure_locale(){
     read_input_text "Confirm locale ($LOCALE)"
   done
   echo 'LANG="'$LOCALE_UTF8'"' > ${MOUNTPOINT}/etc/locale.conf
-  arch_chroot "sed -i 's/#'${LOCALE_UTF8}'/'${LOCALE_UTF8}'/' /etc/locale.gen"
+  arch_chroot "sed -i 's/#\('${LOCALE_UTF8}'\)/\1/' /etc/locale.gen"
   arch_chroot "locale-gen"
 }
 #}}}

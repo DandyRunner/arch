@@ -68,4 +68,4 @@ You can try it first with a `virtualbox`
 - Install and configure Web Servers
 - Many More...
 
-If you like my work, please consider a small Paypal donation at helmuthdu@gmail.com :)
+If you like my work, please consider a small Paypal donation at    :)
