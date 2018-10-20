@@ -1,7 +1,7 @@
 ### Project only accepting patches
 This project is not actively developed but *will* accept PRs
 
-# Archlinux  Install
+# Archlinux Install
 
 Install and configure archlinux has never been easier!
 
